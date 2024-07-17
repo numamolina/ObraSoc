@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estiloInicioSesion.css">
+    <title>Obra Social - Contacto</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navegacion">
+            <a href="index.html" class="anclaLogo">
+                <i class="fas fa-house-medical" aria-hidden="true"></i>
+                <span>OBRA SOCIAL</span>
+            </a>
+            <ul class="navLista">
+                <li class="navItem"><a href="planes2.html" class="navLink">Planes</a></li>
+                <li class="navItem"><a href="faq.html" class="navLink">Preguntas frecuentes</a></li>
+                <li class="navItem"><a href="contacto.html" class="navLink">Contacto</a></li>
+                <li class="navItem"><a href="patrocinadores.html" class="navLink">Patrocinadores</a></li>
+                <li class="navItem"><a href="inicioSesion.html" class="navLink miCuenta"><i class="fas fa-user"></i> Mi cuenta</a></li>
+                
+            </ul>          
+        </nav>
+    </header>
+
+    <!-- CONTACTO -->
+    <main id="main" class="main">
+        <section class="contacto">
+            <form class="formulario" id="contactForm" method="post" action="contacto">
+                <h1>Contacto</h1>
+                <p>Completa los datos para ponerte en contacto con nosotros.</p>
+                <div>
+                    <input class="input" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                    <div id="nombreError" class="error"></div>
+                </div>
+                <div>
+                    <input class="input" type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                    <div id="correoError" class="error"></div>
+                </div>
+                <div>
+                    <textarea class="input" id="mensaje" name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+                    <div id="mensajeError" class="error"></div>
+                </div>
+                <div>
+                    <input class="botonIngresar" type="submit" value="Enviar">
+                </div>
+            </form>
+        </section>
+        <section id="graciasMsj" class="gracias-" style="display:none;">
+            <h2>¡Mensaje Enviado!</h2>
+            <button class="botonIngresar" onclick="window.location.href='index.html'">Continuar</button>
+        </section>
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footContenedor">
+            <ul class="footLista">
+                <li class="footItem"><a href="#" class="footLink"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+                <li class="footItem"><a href="https://www.facebook.com/" class="footLink"><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li class="footItem"><a href="https://www.instagram.com/" class="footLink"><i class="fa-brands fa-square-instagram"></i></a></li>
+                <li class="footItem"><a href="https://twitter.com/" class="footLink"><i class="fa-brands fa-square-twitter"></i></a></li>
+                <li class="footItem"><a href="https://www.youtube.com/" class="footLink"><i class="fa-brands fa-square-youtube"></i></a></li>
+                <li class="footItem"><p>© 2024 Página de Salud. Todos los derechos reservados. <br>Superintendencia de Servicios de Salud <br>Órgano control de obras sociales y entidades de medicina prepaga <br>0800-222-SALUD (72583) | www.sssalud.gob.ar</p></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="contacto.js"></script>
+</body>
+</html>

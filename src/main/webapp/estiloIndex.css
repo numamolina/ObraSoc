@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+body{
+    background-color: #ebf4fa;
+    color:black;
+}
+
+/* HEADER */
+.header{
+    background-color: #008DDA;
+    color: #ffffff;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    .navegacion{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding: 1.5rem 0;
+
+        .anclaLogo{
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+
+            /* Animación hover */
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+            }
+        }
+
+        .navLista{
+            list-style: none;
+            display: flex;
+            align-items: center;
+
+            /* Botones */
+            .navItem{
+                margin-right: 20px;
+
+                .navLink{
+                    background-color: #0380c4;
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 0.5rem 1rem;
+                    border-radius: 25px;
+
+                    /* Efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        color: black;
+                        background-color: #41C9E2;
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        border-radius: 25px;
+                    }
+                }
+
+                /* Botón "mi cuenta" */
+                .navLink.miCuenta{
+                    background-color: #01679e;
+                    color: #ffffff;
+                    border-radius: 25px;
+
+                    /* Efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        color: black;
+                        background-color: #41C9E2;
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Estilos de HEADER para mobile y tablet */
+@media (max-width: 760px){
+    .header{
+        height: initial;
+
+        .navegacion{
+            margin-left: 10px;
+            margin-right: 10px;
+            flex-direction: column;
+            row-gap: 20px;
+
+            .anclaLogo{
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+
+            .navLista{
+                padding: initial;
+
+                .navItem{
+                    .navLink{
+                        font-weight: 400;
+                        margin-right: initial;
+                        font-size: 1rem;
+                        padding: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* MAIN */
+.main{
+
+    /* ACORDEON */
+    .acordeon {
+        box-sizing: border-box;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+    }
+      
+      .acordeon-select {
+        cursor: pointer;
+        margin: 0;
+        opacity: 0;
+        z-index: 1;
+      }
+      
+      .acordeon-title {
+        position: relative;
+      }
+      
+      .acordeon-title:not(:nth-last-child(2))::after {
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      
+      .acordeon-title span {
+        bottom: 0px;
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        white-space: nowrap;
+        width: 100%;
+      }
+      
+      .acordeon-content {
+        box-sizing: border-box;
+        overflow: auto;
+        position: relative;
+        transition: margin 0.3s ease 0.1s;
+      }
+      
+      .acordeon-select:checked + .acordeon-title + .acordeon-content {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+      
+      /* Estilo */       
+       .acordeon {
+          flex-direction: row;
+          height: 650px;
+        } 
+      
+       .acordeon-title,
+      .acordeon-select  {
+          background-color: #add8e6;
+          color: #565c5c;
+          width: 65px;
+          height: 100%;
+          font-size: 18px;
+        }
+      
+      .acordeon-select {
+          margin-bottom: -65px;
+          margin-right: -65px;
+        }
+      
+      .acordeon-title:not(:nth-last-child(2))::after {
+          border-bottom-color: transparent;
+          border-right-color: rgb(234, 234, 234);
+        } 
+      
+       .acordeon-select:hover + .acordeon-title,
+      .acordeon-select:checked + .acordeon-title {
+          background-color: #ffffff;
+        } 
+      
+       .acordeon-title span  {	
+          transform: rotate(-90deg);
+          -ms-writing-mode: lr-bt;
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+          padding-bottom: 33px;
+          padding-top: 33px;
+          line-height: 65px;
+        } 
+      
+       .acordeon-content {
+          background-color: #f0f8ff;
+          color: #565c5c;
+          height: 650px;
+          margin-bottom: -500px;
+          margin-right: calc(-1 * calc(100% - 195px));
+          padding: 30px;
+          width: calc(100% - 195px);
+        }
+    
+        /* Quienes somos */
+        #somos{
+            background:linear-gradient(to right top, #00000080, #00000080), url(imagenes/cubos2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        #somos p {
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 70%;
+            margin: 15%;
+        }
+
+        /* Novedades */
+        li{
+        padding-bottom: 1%;
+        }
+        
+        .descripcion{
+        list-style: none;
+        margin-left: 35px;
+        }    
+    }
+
+/* FOOTER */
+.footer{
+    background-color: #008DDA;
+    color: #ffffff;
+    width: 100%;
+    min-height: 10vh;
+    bottom: 0;
+
+    p {
+        font-size: 0.7rem;
+        border-left: 2px solid #ffffffbd;
+        padding-left: 5%;
+    }
+    
+    .footContenedor{
+        display: flex;
+        place-content: center;
+        padding: 1.5rem 0;
+
+        .footLista{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            place-content: space-between end;
+            place-items: center end;
+    
+            /* Botones */
+            .footItem{
+                margin: 0 20px 0 0;
+    
+                .footLink{
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 0.3rem 0.5rem;
+    
+                    /* Efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        color: black;
+                        background-color: #41C9E2;
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Estilos de FOOTER para mobile y tablet */
+@media (max-width: 760px){
+    .footer{
+        height: initial;
+
+        .footContenedor{
+            margin-left: 10px;
+            margin-right: 10px;
+            flex-direction: column;
+            row-gap: 20px;
+
+            .footLista{
+                padding: initial;
+
+                .footItem{
+                    .footLink{
+                        font-weight: 400;
+                        margin-right: initial;
+                        font-size: 1rem;
+                        padding: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

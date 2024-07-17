@@ -1,0 +1,361 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+body{
+    background-color: #ebf4fa;
+    color:black;
+}
+
+/* HEADER */
+.header{
+    background-color: #008DDA;
+    color: #ffffff;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    .navegacion{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding: 1.5rem 0;
+
+        .anclaLogo{
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+
+            /* Animación hover */
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+            }
+        }
+
+        .navLista{
+            list-style: none;
+            display: flex;
+            align-items: center;
+
+            /* Botones */
+            .navItem{
+                margin-right: 20px;
+
+                .navLink{
+                    background-color: #0380c4;
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 0.5rem 1rem;
+                    border-radius: 25px;
+
+                    /* Efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        color: black;
+                        background-color: #41C9E2;
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        border-radius: 25px;
+                    }
+                }
+
+                /* Botón "mi cuenta" */
+                .navLink.miCuenta{
+                    background-color: #01679e;
+                    color: #ffffff;
+                    border-radius: 25px;
+
+                    /* Efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        color: black;
+                        background-color: #41C9E2;
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Estilos de HEADER para mobile y tablet */
+@media (max-width: 760px){
+    .header{
+        height: initial;
+
+        .navegacion{
+            margin-left: 10px;
+            margin-right: 10px;
+            flex-direction: column;
+            row-gap: 20px;
+
+            .anclaLogo{
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+
+            .navLista{
+                padding: initial;
+
+                .navItem{
+                    .navLink{
+                        font-weight: 400;
+                        margin-right: initial;
+                        font-size: 1rem;
+                        padding: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* MAIN */
+.main{
+
+    /* ÍNDICE */
+    .indice{
+        margin: 1% 0 3%;
+
+        .indiceTitulo{
+            text-align: center;
+            font-size: 2rem;
+            padding: 2rem;
+        }
+    
+        .indiceContenedor{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 30%));
+            grid-gap: 20px;
+            align-items: stretch;
+            place-content: center;
+
+            .txtimgContenedor{
+                position: relative;
+                text-align: center;
+                
+                a{ 
+                    font-weight: 700;
+                    font-size: 3.5rem;
+                    color: #ffffff;
+                    text-shadow: 0 0 30px #050505, 0 0 5px #050505;
+                    text-decoration: none;
+                }
+                .centrado{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    
+                }
+            }
+              
+    
+            img{
+                max-width: 100%;
+                border-radius: 5px;
+    
+                &:hover{
+                    border: 1px solid #ccc;
+                    transform: scale(0.95);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+
+/*  PLANES */
+    .planA{
+        margin: 2% 0;
+        background:linear-gradient(to right top, #000000a2, #000000a2), url(imagenes/doctor-checking-patient2.jpg);
+        background-size: cover;
+        background-position: center;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        align-items: center;
+        color: #ffffff;
+        padding: 1rem;
+    }
+
+    .planB{
+        margin: 2% 0;
+        background:linear-gradient(to right top, #000000a2, #000000a2), url(imagenes/couple-doctor2.jpg);
+        background-size: cover;
+        background-position: center;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        align-items: center;
+        color: #ffffff;
+        padding: 1rem;
+    }
+
+    .planC{
+        margin: 2% 0;
+        background:linear-gradient(to right top, #000000a2, #000000a2), url(imagenes/familia-corazon2.jpg);
+        background-size: cover;
+        background-position: center;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        align-items: center;
+        color: #ffffff;
+        padding: 1rem;
+    }
+
+    #planTitulo{
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 3;
+        border-bottom: 3px solid #ffffff67;
+        padding: 1rem;
+        font-size: 2rem;
+    }
+
+    #resenia{
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        padding: 0 3rem;
+        text-align: justify;
+    }
+
+    #asesorarmeBoton{
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+        place-self: center;
+        
+        .asesorarmeLink{
+            background-color: #0380c4;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: 1rem 1rem;
+            border-radius: 25px;
+
+            /* Efecto de botón presionado */
+            transition: transform 0.3s, box-shadow 0.3s;
+            &:hover{
+                color: black;
+                background-color: #41C9E2;
+                transform: scale(0.95);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                border-radius: 25px;
+            }
+        }
+    }
+
+    #prestaciones{
+        grid-row: 2 / span 2;
+        grid-column: 2 / span 2;
+        border-left: 3px solid #ffffff67;
+        padding: 3rem;
+        text-align: justify;
+
+        h2{
+            text-decoration: underline;
+        }
+
+        ul{
+            padding: 2rem;
+
+        }
+    }
+}
+
+/* FOOTER */
+.footer{
+    background-color: #008DDA;
+    color: #ffffff;
+    width: 100%;
+    min-height: 10vh;
+    bottom: 0;
+
+    p {
+        font-size: 0.7rem;
+        border-left: 2px solid #ffffffbd;
+        padding-left: 5%;
+    }
+    
+    .footContenedor{
+        display: flex;
+        place-content: center;
+        padding: 1.5rem 0;
+
+        .footLista{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            place-content: space-between end;
+            place-items: center end;
+    
+            /* Botones */
+            .footItem{
+                margin: 0 20px 0 0;
+    
+                .footLink{
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 0.3rem 0.5rem;
+    
+                    /* Efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover{
+                        color: black;
+                        background-color: #41C9E2;
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Estilos de FOOTER para mobile y tablet */
+@media (max-width: 760px){
+    .footer{
+        height: initial;
+
+        .footContenedor{
+            margin-left: 10px;
+            margin-right: 10px;
+            flex-direction: column;
+            row-gap: 20px;
+
+            .footLista{
+                padding: initial;
+
+                .footItem{
+                    .footLink{
+                        font-weight: 400;
+                        margin-right: initial;
+                        font-size: 1rem;
+                        padding: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

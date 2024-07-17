@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estiloIndex.css">
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/906492adb2.js" crossorigin="anonymous"></script>
+    <title>Obra Social - Inicio</title>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+    <nav class="navegacion">
+        <a href="index.html" class="anclaLogo">
+            <i class="fas fa-house-medical" aria-hidden="true"></i>
+            <span>OBRA SOCIAL</span>
+        </a>
+        <ul class="navLista">
+            <li class="navItem"><a href="planes2.html" class="navLink">Planes</a></li>
+            <li class="navItem"><a href="faq.html" class="navLink">Preguntas frecuentes</a></li>
+            <li class="navItem"><a href="contacto.html" class="navLink">Contacto</a></li>
+            <li class="navItem"><a href="patrocinadores.html" class="navLink">Patrocinadores</a></li>
+            <li class="navItem"><a href="inicioSesion.html" class="navLink miCuenta"><i class="fas fa-user"></i> Mi cuenta</a></li>
+        </ul>          
+    </nav>
+</header>
+<main id="main" class="main">
+    <!-- ACORDEON -->
+    <div class="acordeon">
+        <!-- Quienes somos -->
+        <input type="radio" name="select" class="acordeon-select" id="somos-select" checked />
+        <div class="acordeon-title"><span>Quiénes somos</span></div>
+        <div class="acordeon-content" id="somos">
+            <p>Empresa privada que brinda servicios de atención médica a sus afiliados a cambio de una cuota mensual.<br>
+            Ofrecemos una variedad de planes de salud que pueden incluir consultas médicas, hospitalización, servicios de laboratorio, medicamentos, y en algunos casos también servicios de odontología, oftalmología, y otros tratamientos especializados.</p>
+        </div>
+        <!-- Sucursales -->
+        <input type="radio" name="select" class="acordeon-select" id="sucursales-select"/>
+        <div class="acordeon-title"><span>Sucursales</span></div>
+        <div class="acordeon-content"><p>Información sobre las sucursales de la obra social.</p></div>
+        <!-- Novedades -->
+        <input type="radio" name="select" class="acordeon-select" id="novedades-select"/>
+        <div class="acordeon-title"><span>Novedades</span></div>
+        <div class="acordeon-content" id="novedades">
+            <div id="contenido-iframe-1"></div>
+            <div id="contenido-iframe-2"></div>
+        </div>
+    </div>
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footContenedor">
+        <ul class="footLista">
+            <li class="footItem"><a href="#" class="footLink"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+            <li class="footItem"><a href="https://www.facebook.com/" class="footLink"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li class="footItem"><a href="https://www.instagram.com/" class="footLink"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li class="footItem"><a href="https://twitter.com/" class="footLink"><i class="fa-brands fa-square-twitter"></i></a></li>
+            <li class="footItem"><a href="https://www.youtube.com/" class="footLink"><i class="fa-brands fa-square-youtube"></i></a></li>
+            <li class="footItem">
+                <p>© 2024 Página de Salud. Todos los derechos reservados. <br>Superintendencia de Servicios de Salud <br>Órgano control de obras sociales y entidades de medicina prepaga <br>0800-222-SALUD (72583) | www.sssalud.gob.ar</p>
+            </li>
+        </ul>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+

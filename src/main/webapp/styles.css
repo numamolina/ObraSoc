@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+header {
+    background-color: #add8e6;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    background-color: #add8e6;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #00bfff;
+}
+
+section {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #008DDA;
+    color: #ffffff;
+    width: 100%;
+    min-height: 10vh;
+    bottom: 0;
+}
+
+.footer p {
+    font-size: 0.7rem;
+    border-left: 2px solid #ffffffbd;
+    padding-left: 5%;
+}
+
+.footContenedor {
+    display: flex;
+    place-content: center;
+    padding: 1.5rem 0;
+}
+
+.footLista {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    place-content: space-between end;
+    place-items: center end;
+}
+
+.footItem {
+    margin: 0 20px 0 0;
+}
+
+.footLink {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.footLink:hover {
+    color: black;
+    background-color: #41C9E2;
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    nav a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .login-container {
+        width: 90%;
+    }
+}
+
+/* BOTONES INTERACTIVOS */
+button {
+    background-color: #008DDA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #00bfff;
+    transform: scale(1.05);
+}
